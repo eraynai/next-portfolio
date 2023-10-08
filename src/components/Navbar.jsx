@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import MenuOverlay from "./MenuOverlay";
+import { SunIcon } from "./Icon";
 
 const navLinks = [
   {
@@ -25,54 +26,29 @@ const navLinks = [
   },
 ];
 
-// const scrollToSection = (sectionId) => {
-//   const section = document.querySelector("#" + sectionId); // Add '#' before the sectionId
-//   if (section) {
-//     section.scrollIntoView({ behavior: "smooth" });
-//   }
-// };
-
 const Navbar = () => {
-  const [navbarOpen, setNavBarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link
-          className="text-lg md:text-5xl border border-purple-900 p-4 text-white font-semibold"
-          href={"/"}
-        >
-          ELLI RAYNAI
-        </Link>
-        <div className="mobile-menu block md:hidden">
-          {navbarOpen ? (
-            <button
-              onClick={() => setNavBarOpen(!navbarOpen)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <FontAwesomeIcon className="h-5 w-5" icon={faTimes} />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavBarOpen(!navbarOpen)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <FontAwesomeIcon className="h-5 w-5" icon={faBars} />
-            </button>
-          )}
-        </div>
-
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <NavLink href={link.path} title={link.title} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
-    </nav>
+    <div className="w-full p-4 px-10 flex items-center justify-between border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 fixed">
+      <Link
+        className="text-lg md:text-5xl border border-purple-900 p-4 text-white font-semibold"
+        href={"/"}
+      >
+        ELLI RAYNAI
+      </Link>
+      <nav className="w-max py-3 px-8 rounded-full font-medium capitalize flex items-center fixed top-6 right-1/2 translate-x-1/2 bg-gray backdrop-blur-sm">
+        <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <NavLink href={link.path} title={link.title} />
+            </li>
+          ))}
+        </ul>
+        <button className="px-4">
+          <SunIcon />
+        </button>
+      </nav>
+    </div>
   );
 };
+
 export default Navbar;

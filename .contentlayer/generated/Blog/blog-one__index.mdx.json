@@ -1,0 +1,27 @@
+{
+  "title": "Blog One Title",
+  "publishedAt": "2023-08-28T00:00:00.000Z",
+  "updatedAt": "2023-08-28T00:00:00.000Z",
+  "description": "The is the description for blog one",
+  "image": "../../public/blogs/c-d-x-PDX_a_82obo-unsplash.jpg",
+  "isPublished": true,
+  "author": "Elli Raynai",
+  "tags": [
+    "productivity",
+    "css"
+  ],
+  "body": {
+    "raw": "\n# this is the h1 element\n\n## this is the h2 element\n",
+    "html": "<h1>this is the h1 element</h1>\n<h2>this is the h2 element</h2>"
+  },
+  "_id": "blog-one/index.mdx",
+  "_raw": {
+    "sourceFilePath": "blog-one/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "blog-one",
+    "contentType": "mdx",
+    "flattenedPath": "blog-one"
+  },
+  "type": "Blog",
+  "url": "/blogs/blog-one"
+}

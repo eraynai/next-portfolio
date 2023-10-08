@@ -5,8 +5,10 @@ import Projects from "@/components/Projects";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
 import Achievements from "@/components/Achievements";
+import { allBlogs } from "contentlayer/generated";
 
 export default function Home() {
+  console.log(allBlogs);
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
       <Navbar />
